@@ -1,0 +1,84 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+}
+
+.left {
+    background-color: #dbfee8;
+    width: 35%;
+
+
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* ← left‑align children */
+    padding: 2rem;
+    /* ← inset everything from the edge */
+    background-color: #227c72;
+    width: 65%;
+}
+
+input[type=text],
+input[type=password] {
+    all: unset;
+    border: solid;
+    border-radius: 5rem;
+    border-color: #64b8a8;
+    padding: 0.5rem;
+    width: 10rem;
+
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    /* optional max‑width if you still want to cap it: */
+    max-width: 500px;
+}
+.username, .email, .password, .repeat_password{
+    display:flex;
+    flex-direction: column;
+}
+/* place each input wrapper in a 2×2 grid */
+.username {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.email {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.password {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.repeat_password {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* make the checkbox span both columns */
+.agree {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* make the submit button span both columns too */
+.form>button {
+    grid-column: 1 / -1;
+    justify-self: start;
+    /* or center, or end */
+    padding: 0.5rem 1rem;
+    width: fit-content;
+}
